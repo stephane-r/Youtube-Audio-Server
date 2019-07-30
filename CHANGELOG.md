@@ -1,24 +1,4 @@
-# How to use
-
-Set PORT wanted :
-
-`cp .env.dist .env`
-
-Build docker image :
-
-`make docker-build`
-
-Install npm dependencies :
-
-`make npm-install`
-
-Run YAS :
-
-`make docker-up`
-
 # Changelog
-
-Forked from [codealchemist repo](https://github.com/codealchemist/youtube-audio-server).
 
 ## v2.4.0
 

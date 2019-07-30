@@ -1,4 +1,6 @@
-# youtube-audio-server
+# Youtube Audio Server
+
+Forked from [codealchemist repo](https://github.com/codealchemist/youtube-audio-server).
 
 Easily stream and download audio from YouTube.
 
@@ -6,17 +8,23 @@ Easily stream and download audio from YouTube.
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-## Install
+# How to use
 
-`npm install -g youtube-audio-server`
+Set PORT wanted :
 
-Or:
+`cp .env.dist .env`
 
-`npm install --save youtube-audio-server`
+Build docker image :
 
-## Docker image
+`make docker-build`
 
-https://hub.docker.com/r/codealchemist/youtube-audio-server
+Install npm dependencies :
+
+`make npm-install`
+
+Run YAS :
+
+`make docker-up`
 
 ## Search and metadata
 
