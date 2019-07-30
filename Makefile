@@ -21,7 +21,7 @@ docker-build:
 	docker-compose build
 docker-up:
 	@echo "--> Start docker services"
-	$(DOCKERCOMPO) -f docker-compose.production.yml run --rm --service-ports yas npm start
+	$(DOCKERCOMPO) -f docker-compose.production.yml run -d --rm --service-ports yas npm start
 docker-down:
 	@echo "--> Stop docker services"
 	$(DOCKERCOMPO) down
