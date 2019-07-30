@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  yas:
+    build: ./config/docker
+    container_name: yas
+    environment:
+      - PORT=$YAS_PORT
+      - LOCAL_USER_ID=$USER_ID
+      - LOCAL_GROUP_ID=$GROUP_ID
+    ports:
+      - $PORT:$YAS_PORT
+    volumes:
+      - .:/app
