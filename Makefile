@@ -21,7 +21,7 @@ docker-build:
 	docker-compose build
 docker-up:
 	@echo "--> Start docker services"
-	$(DOCKERNPM) start
+	$(DOCKERCOMPO) -f docker-compose.production.yml run --rm --service-ports yas npm start
 docker-down:
 	@echo "--> Stop docker services"
 	$(DOCKERCOMPO) down
@@ -36,3 +36,6 @@ docker-restart:
 npm-install:
 	@echo "--> Install dependencies"
 	$(DOCKERNPM) install
+npm-start:
+	@echo "--> Install dependencies"
+	$(DOCKERNPM) start

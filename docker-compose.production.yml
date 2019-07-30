@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  yas:
+    build: ./config/docker
+    container_name: yas
+    environment:
+      - PORT=$YAS_PORT
+      - LOCAL_USER_ID=$USER_ID
+      - LOCAL_GROUP_ID=$GROUP_ID
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
+      - VIRTUAL_HOST=audio.${SITE_URL}
+      - VIRTUAL_PORT=8080
+      - LETSENCRYPT_HOST=audio.${SITE_URL}
+      - LETSENCRYPT_EMAIL=${MAILER_DEFAUT_SENDER_ADDRESS}
+    ports:
+      - $PORT:$YAS_PORT
+    volumes:
+      - .:/app
+    restart: always
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
