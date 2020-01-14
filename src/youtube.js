@@ -63,6 +63,10 @@ class YouTube {
           cache[id] = null
           ffmpeg.kill()
         })
+        .on('error', (error) => {
+          ffmpeg.kill()
+          return error
+        })
         .pipe(
           stream,
           { end: true }
