@@ -8,7 +8,10 @@ services:
       - PORT=$YAS_PORT
       - LOCAL_USER_ID=$USER_ID
       - LOCAL_GROUP_ID=$GROUP_ID
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
     ports:
-      - $PORT:$YAS_PORT
+      - $PORT:3000
     volumes:
       - .:/app
