@@ -1,5 +1,5 @@
 FROM jrottenberg/ffmpeg:3.4-alpine
-FROM node:10.15.1
+FROM node:16
 
 # copy ffmpeg bins from first image
 COPY --from=0 / /
